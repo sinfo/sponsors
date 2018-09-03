@@ -137,7 +137,8 @@ input:-webkit-autofill:focus {
 .social-menu {
     list-style: none;
     margin: 0;
-    padding: 10px;
+    padding-left: 0px;
+    padding-bottom: 25px;
 }
 
 .social-menu li {
@@ -267,6 +268,7 @@ color: #515656
 
 .box {
     padding: 50px 30px;
+    margin-top: 20px;
     text-align: center;
     -webkit-box-shadow: 0 0 0 0 #ffffff;
     box-shadow: 0 0 0 0 #ffffff;
