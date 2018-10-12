@@ -1,32 +1,3 @@
-/*-----------------------------------------------------------------------------------
-Template Name: New HTML5 Template,
-Template URI: http://www.themectg.com
-Description: This is html5 template
-Author: Themectg
-Author URI: http://www.themectg.com
-Version: 1.0
------------------------------------------------------------------------------------
-CSS INDEX
-===================
-1. Google font
-2. Theme Default CSS
-3. Helper-class
-4. Button-style
-5. Mainmenu-area
-6. Section-Background
-7. Header-style
-8. Headline-style
-9. Skills-area
-10. Service-area
-11. Work-area
-12. Team-area
-13. Bar-effect-css
-14. Masp style
-15. Form-style
-16. Scroll-To-Top-Button
-17. Preloader-css
------------------------------------------------------------------------------------*/
-
 /*-----------------
 1. Google font
 ------------------*/
@@ -51,7 +22,7 @@ a:focus,
 a:hover {
     text-decoration: none;
     outline: none;
-    color: #000000;
+    color: #153355;
 }
 
 img {
@@ -173,10 +144,10 @@ input:-webkit-autofill:focus {
 
 .overlay:before,
 .sky-bg {
-    background: #75cbe7;
-    background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#153355));
+    background: #2B5285;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2B5285), to(#153355));
     background: linear-gradient(to bottom, #0E2947 0%, #2B5285 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#153355', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2B5285', endColorstr='#153355', GradientType=0);
     color: #ffffff;
 }
 
@@ -264,6 +235,44 @@ color: #515656
 
 .fontColor p {
 color: #515656
+}
+
+.boxMerch {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    margin-top: 20px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 0 0 #ffffff;
+    box-shadow: 0 0 0 0 #ffffff;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 5px;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+
+}
+
+.boxMerch:hover {
+    -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+.boxMerch h4 {
+    text-transform: uppercase;
+}
+
+.boxMerch .box-icon {
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+
+
+.boxMerch:hover .box-icon img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0)
 }
 
 .box {
@@ -887,10 +896,10 @@ preloader
     left: 0;
     width: 100%;
     height: 100%;
-    background: #75cbe7;
-    background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#153355));
-    background: linear-gradient(to bottom, #75cbe7 0%, #153355 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#153355', GradientType=0);
+    background: #2B5285;
+    background: -webkit-gradient(linear, left top, left bottom, from(#2B5285), to(#153355));
+    background: linear-gradient(to bottom, #2B5285 0%, #153355 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2B5285', endColorstr='#153355', GradientType=0);
     z-index: 99999999999;
 }
 
@@ -1003,3 +1012,115 @@ preloader
 }
 
 
+/*----------------------
+Animated Arrow Home Page
+-----------------------*/
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+  
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+  
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+  
+  .chevron:before,
+  .chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+  }
+  
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+  
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+  
+  @keyframes move {
+    25% {
+      opacity: 1;
+  
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+  
+  
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  /*----------------------
+Advertising Table
+-----------------------*/
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    border-radius: 2px;
+    margin-bottom: 3%;
+}
+
+th, td {
+    text-align: center;
+    padding: 20px;
+}
+td:nth-child(1) {  
+  width: 30%;
+}
+tr:nth-child(even){background-color: #f8f6ff}
+
+th {
+  background: #2861A1;
+  color: white;
+}
+
+center {
+    margin-top: 2%;
+    margin-bottom: 100px;
+}
+
+.lanpage {
+    padding-top: 3%;
+}
+
+
+  /*-----------------------------
+Safari problem fixe in home page
+------------------------------*/
+
+.row:before{display: none !important;}

@@ -85,16 +85,7 @@
     -webkit-transform: translate3d(0px, 0px, 0px);
 }
 
-.owl-carousel .owl-controls .owl-nav .owl-prev,
-.owl-carousel .owl-controls .owl-nav .owl-next,
-.owl-carousel .owl-controls .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+
 
 .owl-carousel.owl-loaded {
     display: block;
@@ -226,14 +217,5 @@
     z-index: 1;
 }
 
-.owl-carousel .owl-controls .owl-nav {
-    margin-top: 30px;
-}
 
-.owl-carousel .owl-controls .owl-nav > div {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 2.8;
-}
+
