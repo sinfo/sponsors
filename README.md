@@ -1,2 +1,1 @@
-# SINFO Site Sponsors
-# SINFOSponsorsSite
+# SINFO partners' site
