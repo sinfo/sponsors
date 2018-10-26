@@ -11,6 +11,9 @@ Ajax Contact Form
 + https://github.com/mehedidb/Ajax_Contact_Form
 */
 
+// TODO change me
+const serverUrl = 'http://localhost:8888';
+
 (function ($, window, document, undefined) {
     'use strict';
 
@@ -26,13 +29,14 @@ Ajax Contact Form
             'name' : $('input[name="form-name"]').val(),
             'email' : $('input[name="form-email"]').val(),
             'subject' : $('input[name="form-subject"]').val(),
-            'message' : $('textarea[name="form-message"]').val()
+            'message' : $('textarea[name="form-message"]').val(),
+            'recaptcha' : grecaptcha.getResponse(widgetId)
         };
 
         // process the form
         $.ajax({
             type : 'POST',
-            url  : 'process.php',
+            url  : serverUrl,
             data : formData,
             dataType : 'json',
             encode : true
@@ -64,7 +68,8 @@ Ajax Contact Form
             }
         }).fail(function (data) {
             // for debug
-            console.log(data)
+            console.log(data);
+            e.preventDefault();
         });
 
         e.preventDefault();
