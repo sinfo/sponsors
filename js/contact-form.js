@@ -20,57 +20,66 @@ const serverUrl = 'http://localhost:8888';
     var $form = $('#contact-form');
 
     $form.submit(function (e) {
-        // remove the error class
-        $('.form-group').removeClass('has-error');
-        $('.help-block').remove();
 
-        // get the form data
-        var formData = {
-            'name' : $('input[name="form-name"]').val(),
-            'email' : $('input[name="form-email"]').val(),
-            'subject' : $('input[name="form-subject"]').val(),
-            'message' : $('textarea[name="form-message"]').val(),
-            'recaptcha' : grecaptcha.getResponse(widgetId)
-        };
+        var recaptchaCode = grecaptcha.getResponse(widgetId)
 
-        // process the form
-        $.ajax({
-            type : 'POST',
-            url  : serverUrl,
-            data : formData,
-            dataType : 'json',
-            encode : true
-        }).done(function (data) {
-            // handle errors
-            if (!data.success) {
-                if (data.errors.name) {
-                    $('#name-field').addClass('has-error');
-                    $('#name-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.name + '</span>');
+        if (recaptchaCode === '') {
+            $form.prepend('<div class="alert alert-danger">Please fill reCaptcha</div>');
+        } else {
+            // remove the error class
+            $('.form-group').removeClass('has-error');
+            $('.help-block').remove();
+
+            // get the form data
+            var formData = {
+                'name' : $('input[name="form-name"]').val(),
+                'email' : $('input[name="form-email"]').val(),
+                'subject' : $('input[name="form-subject"]').val(),
+                'message' : $('textarea[name="form-message"]').val(),
+                'recaptcha' : recaptchaCode
+            };
+
+            // process the form
+            $.ajax({
+                type : 'POST',
+                url  : serverUrl,
+                data : formData,
+                dataType : 'json',
+                encode : true
+            }).done(function (data) {
+                // handle errors
+                if (!data.success) {
+                    if (data.errors.name) {
+                        $form.prepend('<div class="alert alert-danger">' + data.errors.name + '</div>');
+                    }
+
+                    if (data.errors.email) {
+                        $form.prepend('<div class="alert alert-danger">' + data.errors.email + '</div>');
+                    }
+
+                    if (data.errors.subject) {
+                        $form.prepend('<div class="alert alert-danger">' + data.errors.subject + '</div>');
+                    }
+
+                    if (data.errors.message) {
+                        $form.prepend('<div class="alert alert-danger">' + data.errors.message + '</div>');
+                    }
+
+                    if (data.errors.recaptcha) {
+                        $form.prepend('<div class="alert alert-danger">' + data.errors.recaptcha + '</div>');
+                    }
+
+                    console.log(JSON.stringify(data.errors));
+                } else {
+                    // display success message
+                    $form.html('<div class="alert alert-success">Message sent</div>');
                 }
-
-                if (data.errors.email) {
-                    $('#email-field').addClass('has-error');
-                    $('#email-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.email + '</span>');
-                }
-
-                if (data.errors.subject) {
-                    $('#subject-field').addClass('has-error');
-                    $('#subject-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.subject + '</span>');
-                }
-
-                if (data.errors.message) {
-                    $('#message-field').addClass('has-error');
-                    $('#message-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.message + '</span>');
-                }
-            } else {
-                // display success message
-                $form.html('<div class="alert alert-success">' + data.message + '</div>');
-            }
-        }).fail(function (data) {
-            // for debug
-            console.log(data);
-            e.preventDefault();
-        });
+            }).fail(function (data) {
+                // for debug
+                console.log(data);
+                e.preventDefault();
+            });
+        }
 
         e.preventDefault();
     });
