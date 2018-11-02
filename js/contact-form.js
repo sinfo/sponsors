@@ -24,7 +24,13 @@ const serverUrl = 'http://localhost:8888';
         var recaptchaCode = grecaptcha.getResponse(widgetId)
 
         if (recaptchaCode === '') {
-            $form.prepend('<div class="alert alert-danger">Please fill reCaptcha</div>');
+            // if the div already exists
+            if ($('#alert-message').length) {
+                $('#alert-message').html('Please fill reCaptcha');
+                $('#alert-message').attr('class', 'alert alert-danger');
+            } else {
+                $form.prepend('<div id="alert-message" class="alert alert-danger">Please fill reCaptcha</div>');
+            }
         } else {
             // remove the error class
             $('.form-group').removeClass('has-error');
@@ -49,30 +55,22 @@ const serverUrl = 'http://localhost:8888';
             }).done(function (data) {
                 // handle errors
                 if (!data.success) {
-                    if (data.errors.name) {
-                        $form.prepend('<div class="alert alert-danger">' + data.errors.name + '</div>');
+                    // if the div already exists
+                    if ($('#alert-message').length) {
+                        $('#alert-message').html('An error occurred');
+                        $('#alert-message').attr('class', 'alert alert-danger');
+                    } else {
+                        $form.prepend('<div id="alert-message" class="alert alert-danger">An error occurred</div>');
                     }
-
-                    if (data.errors.email) {
-                        $form.prepend('<div class="alert alert-danger">' + data.errors.email + '</div>');
-                    }
-
-                    if (data.errors.subject) {
-                        $form.prepend('<div class="alert alert-danger">' + data.errors.subject + '</div>');
-                    }
-
-                    if (data.errors.message) {
-                        $form.prepend('<div class="alert alert-danger">' + data.errors.message + '</div>');
-                    }
-
-                    if (data.errors.recaptcha) {
-                        $form.prepend('<div class="alert alert-danger">' + data.errors.recaptcha + '</div>');
-                    }
-
-                    console.log(JSON.stringify(data.errors));
                 } else {
                     // display success message
-                    $form.html('<div class="alert alert-success">Message sent</div>');
+                    // if the div already exists
+                    if ($('#alert-message').length) {
+                        $('#alert-message').html('Message sent');
+                        $('#alert-message').attr('class', 'alert alert-success');
+                    } else {
+                        $form.prepend('<div id="alert-message" class="alert alert-danger">Message sent</div>');
+                    }
                 }
             }).fail(function (data) {
                 // for debug
