@@ -45,11 +45,14 @@ const serverUrl = 'http://localhost:8888';
                 'recaptcha' : recaptchaCode
             };
 
+            var data = {}
+            Object.assign(data, formData, { source: 'PARTNERS'} )
+
             // process the form
             $.ajax({
                 type : 'POST',
                 url  : serverUrl,
-                data : formData,
+                data : data,
                 dataType : 'json',
                 encode : true
             }).done(function (data) {
@@ -69,7 +72,7 @@ const serverUrl = 'http://localhost:8888';
                         $('#alert-message').html('Message sent');
                         $('#alert-message').attr('class', 'alert alert-success');
                     } else {
-                        $form.prepend('<div id="alert-message" class="alert alert-danger">Message sent</div>');
+                        $form.prepend('<div id="alert-message" class="alert alert-success">Message sent</div>');
                     }
                 }
             }).fail(function (data) {
