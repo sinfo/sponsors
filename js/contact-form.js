@@ -12,7 +12,7 @@ Ajax Contact Form
 */
 
 // TODO change me
-const serverUrl = 'http://localhost:8888';
+const serverUrl = 'https://mailgunbot.sinfo.org';
 
 (function ($, window, document, undefined) {
     'use strict';
