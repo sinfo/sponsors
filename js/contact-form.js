@@ -11,61 +11,76 @@ Ajax Contact Form
 + https://github.com/mehedidb/Ajax_Contact_Form
 */
 
+// TODO change me
+const serverUrl = 'https://mailgunbot.sinfo.org';
+
 (function ($, window, document, undefined) {
     'use strict';
 
     var $form = $('#contact-form');
 
     $form.submit(function (e) {
-        // remove the error class
-        $('.form-group').removeClass('has-error');
-        $('.help-block').remove();
 
-        // get the form data
-        var formData = {
-            'name' : $('input[name="form-name"]').val(),
-            'email' : $('input[name="form-email"]').val(),
-            'subject' : $('input[name="form-subject"]').val(),
-            'message' : $('textarea[name="form-message"]').val()
-        };
+        var recaptchaCode = grecaptcha.getResponse(widgetId)
 
-        // process the form
-        $.ajax({
-            type : 'POST',
-            url  : 'process.php',
-            data : formData,
-            dataType : 'json',
-            encode : true
-        }).done(function (data) {
-            // handle errors
-            if (!data.success) {
-                if (data.errors.name) {
-                    $('#name-field').addClass('has-error');
-                    $('#name-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.name + '</span>');
-                }
-
-                if (data.errors.email) {
-                    $('#email-field').addClass('has-error');
-                    $('#email-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.email + '</span>');
-                }
-
-                if (data.errors.subject) {
-                    $('#subject-field').addClass('has-error');
-                    $('#subject-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.subject + '</span>');
-                }
-
-                if (data.errors.message) {
-                    $('#message-field').addClass('has-error');
-                    $('#message-field').find('.col-lg-10').append('<span class="help-block">' + data.errors.message + '</span>');
-                }
+        if (recaptchaCode === '') {
+            // if the div already exists
+            if ($('#alert-message').length) {
+                $('#alert-message').html('Please fill reCaptcha');
+                $('#alert-message').attr('class', 'alert alert-danger');
             } else {
-                // display success message
-                $form.html('<div class="alert alert-success">' + data.message + '</div>');
+                $form.prepend('<div id="alert-message" class="alert alert-danger">Please fill reCaptcha</div>');
             }
-        }).fail(function (data) {
-            // for debug
-            console.log(data)
-        });
+        } else {
+            // remove the error class
+            $('.form-group').removeClass('has-error');
+            $('.help-block').remove();
+
+            // get the form data
+            var formData = {
+                'name' : $('input[name="form-name"]').val(),
+                'email' : $('input[name="form-email"]').val(),
+                'subject' : $('input[name="form-subject"]').val(),
+                'message' : $('textarea[name="form-message"]').val(),
+                'recaptcha' : recaptchaCode
+            };
+
+            var data = {}
+            Object.assign(data, formData, { source: 'PARTNERS'} )
+
+            // process the form
+            $.ajax({
+                type : 'POST',
+                url  : serverUrl,
+                data : data,
+                dataType : 'json',
+                encode : true
+            }).done(function (data) {
+                // handle errors
+                if (!data.success) {
+                    // if the div already exists
+                    if ($('#alert-message').length) {
+                        $('#alert-message').html('An error occurred');
+                        $('#alert-message').attr('class', 'alert alert-danger');
+                    } else {
+                        $form.prepend('<div id="alert-message" class="alert alert-danger">An error occurred</div>');
+                    }
+                } else {
+                    // display success message
+                    // if the div already exists
+                    if ($('#alert-message').length) {
+                        $('#alert-message').html('Message sent');
+                        $('#alert-message').attr('class', 'alert alert-success');
+                    } else {
+                        $form.prepend('<div id="alert-message" class="alert alert-success">Message sent</div>');
+                    }
+                }
+            }).fail(function (data) {
+                // for debug
+                console.log(data);
+                e.preventDefault();
+            });
+        }
 
         e.preventDefault();
     });

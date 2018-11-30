@@ -869,6 +869,12 @@ color: #515656
     min-width: 150px;
     margin-top: 10px;
     border-radius: 3px;
+    float: right;
+}
+
+.contact-form .recaptcha {
+    float: left;
+    overflow: hidden;
 }
 
 .form-control {
