@@ -1186,6 +1186,10 @@ Safari problem fixe in home page
     padding-top: 0 !important;
 }
 
+.last-opportunity-box{
+    padding-top: 0 !important;
+}
+
 td.table-sold-out{
     background-color: #2460a396;
     color: white;
