@@ -1,0 +1,17 @@
+<div>
+  <h1>Reservation state update for {{link.companyName}}: <b>{{state}}</b></h1>
+
+  <h2>Stands</h2>
+  {{#each reservation.stands}}
+  <div>
+    <span><b>Day:</b> {{day}}</span>
+    <span><b>Stand:</b> {{standId}}</span>
+  </div>
+  {{/each}}
+
+  <p><b>Issued:</b> {{reservation.issued}}</p>
+
+  <p>Click <a href="https://sponsors.sinfo.org/token/{{link.token}}">here</a> to go to company's page</p>
+
+  <b>PLEASE DO NOT REPLY TO THIS EMAIL</b>
+</div>

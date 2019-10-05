@@ -1,0 +1,71 @@
+{
+  "name": "sponsors-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=9.11.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "watch": "./node_modules/.bin/nodemon",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --file ./test/prepareServer ./test/* --exit --timeout 10000 --slow 1000",
+    "lint": "./node_modules/.bin/eslint --ext .js .",
+    "gen-keys": "mkdir -p keys; ssh-keygen -t rsa -b 4096 -f ./keys/jwtRS256.key -q -N \"\"; openssl rsa -in ./keys/jwtRS256.key -pubout -outform PEM -out ./keys/jwtRS256.key.pub",
+    "production": "NODE_ENV=production node index.js"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinfo/sponsors.git"
+  },
+  "author": "SINFO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sinfo/sponsors/issues"
+  },
+  "homepage": "https://github.com/sinfo/sponsors#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.1.0",
+    "eslint-config-standard": "^12.0.0-alpha.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "form-data": "^2.3.2",
+    "mocha": "^5.2.0",
+    "mongodb": "^3.1.4",
+    "nodemon": "^1.18.1",
+    "pre-commit": "^1.2.2",
+    "stream-to-promise": "^2.2.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.278.1",
+    "boom": "^7.2.0",
+    "dotenv": "^8.1.0",
+    "email-validator": "^2.0.4",
+    "handlebars": "^4.0.12",
+    "hapi": "^17.5.2",
+    "hapi-auth-bearer-token": "^6.0.1",
+    "hapi-router": "^4.0.0",
+    "hapi-swagger": "^9.1.1",
+    "inert": "^5.1.0",
+    "joi": "^13.4.0",
+    "jsonwebtoken": "^8.3.0",
+    "logger": "git+https://github.com/sinfo/logger.git",
+    "mailgun-js": "^0.21.0",
+    "mime-types": "^2.1.19",
+    "mongoose": "^5.2.12",
+    "prettyjson": "^1.2.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "tough-cookie": "^2.4.3",
+    "vision": "^5.3.3"
+  }
+}

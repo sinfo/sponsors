@@ -1,0 +1,72 @@
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraphs {
+    order: 1;
+    height: 90%;
+    overflow-y: hidden;
+}
+
+.buttons {
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.one_button {
+    justify-content: flex-end !important;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.title b {
+    font-weight: bold;
+    color: #00254a;
+}
+
+.text p {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #4b5763;
+}
+
+b.extra {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00254a;
+}
+
+b.days {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00254a;
+}
+
+.reservations-link a {
+    font-size: 3rem;
+    color: #00254a;
+    font-weight: 600;
+}
+
+.reservations-link a:hover {
+    text-decoration: none;
+    color: #4b5763;
+}
+
+.nav-buttons a {
+    font-size: 3rem;
+    color: #00254a;
+    font-weight: 600;
+}
+
+.nav-buttons a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #4b5763;
+}

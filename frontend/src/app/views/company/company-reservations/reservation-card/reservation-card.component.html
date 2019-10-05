@@ -1,0 +1,36 @@
+<div class="card" *ngIf="event && reservation" [ngClass]="{'confirmed': reservation.feedback && reservation.feedback.status === 'CONFIRMED', 'cancelled': reservation.feedback && reservation.feedback.status === 'CANCELLED', 'pending': reservation.feedback && reservation.feedback.status === 'PENDING' }">
+  <div class="issued" *ngIf="reservation.issued">
+    {{reservation.issued | date : 'dd/MM/yyyy | HH\'h\'mm\'m\'in'}}
+    <span *ngIf="reservation.feedback" class="status">
+      <b>- {{reservation.feedback.status}}</b>
+    </span>
+  </div>
+
+  <div class="stands">
+    <div *ngFor="let stand of reservation.stands | standsDisplay : event" class="stand" [ngClass]="{'booked': stand.id !== undefined}">
+      <div class="info">
+        <b [innerHTML]="'reservations.day' | translate: {day: stand.day} "></b> ({{ english? (stand.date | date : 'MMMM
+        d') : (stand.date | ptDate: stand.date)}})
+        <span *ngIf="stand.id !== undefined">
+          <b>- Stand {{stand.id + 1}}</b>
+        </span>
+      </div>
+
+      <div class="action" *ngIf="stand.id !== undefined && reservation.feedback === undefined" (click)="removeStand(stand)">
+        <fa-icon [icon]="['fas', 'times']"></fa-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="message" *ngIf="reservation.feedback && reservation.feedback.status === 'PENDING'">
+    <p>
+      We were notified of this reservation. You will be notified if this reservation
+      is approved.
+    </p>
+
+    <p>
+      If this reservation is approved, the card will turn green and will show that is confirmed.
+    </p>
+  </div>
+
+</div>

@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  sponsors-database:
+    image: mongo:2.7
+    container_name: sponsors-database
+    ports:
+        - 27018:27017
+    restart: unless-stopped
+    command: mongod
+    volumes:
+        - ../data:/data/db
+
+  sponsors-backend:
+    build: ./backend/
+    container_name: sponsors-backend
+    depends_on:
+        - sponsors-database
+    links:
+        - sponsors-database
+    ports:
+        - 8091:80
+    restart: unless-stopped
+    env_file:
+        - ./backend/.env
+    environment:
+        - SPONSORS_MONGO_URL=mongodb://sponsors-database:27017
+
+  sponsors-frontend:
+      build: ./frontend/
+      container_name: sponsors-frontend
+      depends_on:
+        - sponsors-backend
+      links:
+        - sponsors-backend
+      ports:
+        - 4201:80
+      restart: unless-stopped
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
+       # - ./error.log:/var/log/nginx/error.log
+       # - ./access.log:/var/log/nginx/access.log
