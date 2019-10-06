@@ -205,19 +205,6 @@ input:-webkit-autofill:focus {
   padding-bottom: 20px;
 }
 
-.page-title h2:after {
-  content: "\e675";
-  font-family: 'themify';
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: -10px;
-  width: 15px;
-  height: 15px;
-  font-size: 14px;
-}
-
 .deadlinesBackground {
   background: #153355
 }
@@ -1053,7 +1040,7 @@ table {
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2px;
-  margin-bottom: 3%;
+  margin: 0 auto 3%;
 }
 
 th, td {

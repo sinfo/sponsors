@@ -11,75 +11,45 @@ import { ClipboardModule } from 'ngx-clipboard';
 
 import { AppRoutes } from './app.routes';
 
-import { AdminGuard } from './auth/admin.guard';
 import { CompanyGuard } from './auth/company.guard';
 
-import { SortStandsPipe } from './views/admin/venues/venue/sort-stands.pipe';
-import { CompleteCompanyInfoPipe } from './views/admin/links/complete-company-info.pipe';
-import { GetArrayOfParticipationDaysPipe } from './views/admin/links/link/get-array-of-participation-days.pipe';
 import { DatePtPipe } from './views/company/welcome/date-pt.pipe';
 import { DateEnPipe } from './views/company/welcome/date-en.pipe';
 import { PtDatePipe } from './views/company/company-reservations/pt-date.pipe';
 import { StandsDisplayPipe } from './views/company/company-reservations/reservation-card/stands-display.pipe';
 
 import { StorageService } from 'src/app/storage.service';
-import { LinksService } from 'src/app/views/admin/links/links.service';
-import { VenuesService } from 'src/app/views/admin/venues/venues.service';
-import { CanvasService } from 'src/app/views/admin/venues/venue/venue-image/canvas/canvas.service';
 import { CompanyService } from 'src/app/views/company/company.service';
-import { ReservationsService } from 'src/app/views/admin/reservations/reservations.service';
 import { DeckService } from 'src/app/services/deck.service';
 
 
 // TODO import { intersectionObserverPreset, LazyLoadImageModule } from 'ng-lazyload-image'; // <-- include intersectionObserverPreset
 import { AppComponent } from './app.component';
 import { NotfoundComponent } from './views/notfound/notfound.component';
-import { AdminComponent } from './views/admin/admin.component';
 import { HomepageComponent } from './views/homepage/homepage.component';
-import { LinksComponent } from './views/admin/links/links.component';
-import { VenuesComponent } from './views/admin/venues/venues.component';
-import { UploadComponent } from './views/admin/venues/upload/upload.component';
-import { VenueComponent } from './views/admin/venues/venue/venue.component';
-import { CanvasComponent } from './views/admin/venues/venue/venue-image/canvas/canvas.component';
-import { VenueImageComponent } from './views/admin/venues/venue/venue-image/venue-image.component';
-import { LinkComponent } from './views/admin/links/link/link.component';
 import { CompanyComponent } from './views/company/company.component';
-import { ReservationsComponent } from './views/admin/reservations/reservations.component';
-import { ReservationComponent } from './views/admin/reservations/reservation/reservation.component';
-import { BuildTablePipe } from './views/admin/reservations/build-table.pipe';
-import { FilterReservationsPipe } from './views/admin/reservations/filter-reservations.pipe';
 import { WelcomeComponent } from './views/company/welcome/welcome.component';
 import { CompanyReservationsComponent } from './views/company/company-reservations/company-reservations.component';
 import { ReservationCardComponent } from './views/company/company-reservations/reservation-card/reservation-card.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AdvertisingItemsComponent } from './views/homepage/advertisingItems/advertisingItems.component';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {VenueImageComponent} from './views/company/company-reservations/venue-image/venue-image.component';
+import {CanvasComponent} from './views/company/company-reservations/venue-image/canvas/canvas.component';
+import {SortStandsPipe} from './views/company/company-reservations/sort-stands.pipe';
+
 
 library.add(fas);
-
 
 @NgModule({
   declarations: [
     AppComponent,
     NotfoundComponent,
-    AdminComponent,
     HomepageComponent,
     AdvertisingItemsComponent,
-    LinksComponent,
-    VenuesComponent,
-    UploadComponent,
-    VenueComponent,
-    CanvasComponent,
-    VenueImageComponent,
-    SortStandsPipe,
-    LinkComponent,
-    CompleteCompanyInfoPipe,
-    GetArrayOfParticipationDaysPipe,
     CompanyComponent,
-    ReservationsComponent,
-    ReservationComponent,
-    BuildTablePipe,
-    FilterReservationsPipe,
     WelcomeComponent,
     CompanyReservationsComponent,
     DatePtPipe,
@@ -87,37 +57,37 @@ library.add(fas);
     PtDatePipe,
     ReservationCardComponent,
     StandsDisplayPipe,
+    VenueImageComponent,
+    CanvasComponent,
+    SortStandsPipe
   ],
   imports: [
+    NgbModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutes,
-/* TODO    LazyLoadImageModule.forRoot({
-      preset: intersectionObserverPreset
-    }),*/
-    NgbModule.forRoot(),
+    /* TODO    LazyLoadImageModule.forRoot({
+          preset: intersectionObserverPreset
+        }),*/
     FontAwesomeModule,
     ClipboardModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-  })
+    }),
+    CarouselModule
   ],
   providers: [
     StorageService,
-    AdminGuard,
     CompanyGuard,
     DeckService,
-    LinksService,
-    VenuesService,
-    CanvasService,
     CompanyService,
-    ReservationsService
   ],
   bootstrap: [AppComponent]
 })

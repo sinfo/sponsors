@@ -3,20 +3,20 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { CompanyService } from '../company.service';
-import { VenuesService } from '../../admin/venues/venues.service';
 import { DeckService } from 'src/app/services/deck.service';
-import { CanvasService } from '../../admin/venues/venue/venue-image/canvas/canvas.service';
-import { ReservationsService } from 'src/app/views/admin/reservations/reservations.service';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Credentials } from '../../../models/credentials';
-import { Availability } from '../../admin/venues/venue/venue';
 import { Event } from 'src/app/models/event';
-import { Stand } from '../../admin/venues/venue/stand';
-import { Reservation, Stand as ReservationStand } from '../../admin/reservations/reservation/reservation';
-import { CanvasState } from 'src/app/views/admin/venues/venue/venue-image/canvas/canvasCommunication';
 import { TranslateService } from '@ngx-translate/core';
+import {CanvasState} from '../../../models/canvasCommunication';
+import {Availability} from '../../../models/venue';
+import { Reservation, ReservationStand } from '../../../models/reservation';
+import {Stand} from '../../../models/stand';
+import {VenuesService} from '../../../services/venues.service';
+import {CanvasService} from '../../../services/canvas.service';
+import {ReservationsService} from '../../../services/reservations.service';
 
 @Component({
   selector: 'app-company-reservations',

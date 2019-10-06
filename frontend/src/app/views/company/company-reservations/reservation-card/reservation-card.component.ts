@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Event } from 'src/app/models/event';
-import { Reservation } from 'src/app/views/admin/reservations/reservation/reservation';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import {Reservation} from '../../../../models/reservation';
 
 
 @Component({

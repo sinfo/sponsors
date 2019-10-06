@@ -25,6 +25,12 @@ export class AuthService {
     return this.storage.getItem('token') !== null;
   }
 
+  async login() {
+    this.storage.removeItem('token');
+    this.storage.removeItem('company_credentials');
+    window.location.href = `${environment.frontend}`;
+  }
+
   async logout() {
     this.storage.removeItem('token');
     this.storage.removeItem('company_credentials');

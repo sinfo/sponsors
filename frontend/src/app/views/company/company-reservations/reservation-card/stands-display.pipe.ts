@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Stand } from '../../../admin/reservations/reservation/reservation';
 import { Event } from 'src/app/models/event';
+import {ReservationStand} from '../../../../models/reservation';
 
 @Pipe({
   name: 'standsDisplay',
@@ -9,7 +9,7 @@ import { Event } from 'src/app/models/event';
 })
 export class StandsDisplayPipe implements PipeTransform {
 
-  transform(stands: Stand[], event: Event): any {
+  transform(stands: ReservationStand[], event: Event): any {
     const duration = event.getDuration();
     const result = [];
     const date = new Date(event.date);

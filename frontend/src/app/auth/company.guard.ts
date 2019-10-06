@@ -4,7 +4,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { AuthService } from '../services/auth.service';
 import { environment } from '../../environments/environment';
 import { CompanyService } from '../views/company/company.service';
-import { SponsorsService } from '../services/sponsors.service';
+import { SponsorsApiService } from '../services/sponsors.api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class CompanyGuard implements CanActivate {
   constructor(
     private authService: AuthService,
     private companyService: CompanyService,
-    private sponsorsService: SponsorsService,
+    private sponsorsApiService: SponsorsApiService,
     private router: Router
   ) { }
 
@@ -31,7 +31,7 @@ export class CompanyGuard implements CanActivate {
     }
 
     return new Promise<boolean>(resolve => {
-      this.sponsorsService.authenticateCompany(token).subscribe(
+      this.sponsorsApiService.authenticateCompany(token).subscribe(
         credentials => {
           this.authService.saveToken(token);
           this.companyService.updateCredentials(credentials);

@@ -1,13 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-@import "./assets/bootstrap-4.1.3/css/bootstrap.css";
-
-/* Homepage Css */
-@import "./assets/homepage/css/animate.css";
-@import "./assets/homepage/css/normalize.css";
-@import "./assets/homepage/css/style.css";
-@import "./assets/homepage/css/responsive.css";
-
-
 body {
     height: 100%;
     background-color: #b8cfed0f;

@@ -5,10 +5,10 @@ import { Observable } from 'rxjs/internal/Observable';
 
 import { StorageService } from '../../storage.service';
 
-import { Availability } from '../admin/venues/venue/venue';
-import { Reservation } from '../admin/reservations/reservation/reservation';
-import { SponsorsService } from '../../services/sponsors.service';
+import { SponsorsApiService } from '../../services/sponsors.api.service';
 import { Credentials } from '../../models/credentials';
+import {Availability} from '../../models/venue';
+import {Reservation} from '../../models/reservation';
 
 @Injectable({
   providedIn: 'root'
@@ -20,23 +20,23 @@ export class CompanyService {
   constructor(
     private http: HttpClient,
     private storage: StorageService,
-    private sponsorsService: SponsorsService
+    private sponsorsApiService: SponsorsApiService
   ) { }
 
   getVenueAvailability(): Observable<Availability> {
-    return this.sponsorsService.getVenueAvailability();
+    return this.sponsorsApiService.getVenueAvailability();
   }
 
   getReservations(latest: boolean): Observable<Reservation[]> {
-    return this.sponsorsService.getReservations(latest);
+    return this.sponsorsApiService.getReservations(latest);
   }
 
   makeReservation(reservation: Reservation): Observable<Reservation> {
-    return this.sponsorsService.makeReservation(reservation);
+    return this.sponsorsApiService.makeReservation(reservation);
   }
 
   cancelReservation(): Observable<Reservation> {
-    return this.sponsorsService.cancelReservation();
+    return this.sponsorsApiService.cancelReservation();
   }
 
   getCredentials(): Credentials | null {

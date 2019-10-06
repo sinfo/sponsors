@@ -7,12 +7,12 @@ import { Subscription } from 'rxjs/internal/Subscription';
 
 import { environment } from 'src/environments/environment';
 
-import { VenuesService } from '../views/admin/venues/venues.service';
 import { StorageService } from '../storage.service';
 
 import { Event } from '../models/event';
 import { Company } from '../models/company';
 import {AuthService} from './auth.service';
+import {VenuesService} from "./venues.service";
 
 
 @Injectable({

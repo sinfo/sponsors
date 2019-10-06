@@ -23,19 +23,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "src/styles.css",
               "src/assets/homepage/css/animate.css",
               "src/assets/homepage/css/normalize.css",
               "src/assets/homepage/css/responsive.css",
               "src/assets/homepage/css/style.css"
             ],
-            "scripts": [
-              "src/assets/homepage/js/contact-form.js",
-              "src/assets/homepage/js/jquery.parallax-1.1.3.js",
-              "src/assets/homepage/js/main.js",
-              "src/assets/homepage/js/scrollUp.min.js",
-              "src/assets/homepage/js/wow.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

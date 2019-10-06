@@ -1,5 +1,5 @@
-import { Link } from '../views/admin/links/link/link';
 import { Event } from './event';
+import { Link } from './link';
 
 export class Participation {
     event: String;
