@@ -122,6 +122,7 @@ export class SponsorsApiService {
   authenticateCompany(token: String): Observable<Credentials> {
     return this.http.get<Credentials>(`${this.sponsorsUrl}/company/auth`, {
       headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       })
     });

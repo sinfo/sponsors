@@ -22,8 +22,7 @@ export class CompanyGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Promise<boolean> | boolean {
-    const token = next.params.token || this.authService.getToken();
-    const tokenURL = state.url.includes('/token');
+    const token = this.authService.getToken();
 
     if (token === null) {
       window.location.href = `${environment.frontend}`;
@@ -36,13 +35,9 @@ export class CompanyGuard implements CanActivate {
           this.authService.saveToken(token);
           this.companyService.updateCredentials(credentials);
 
-          if (tokenURL) {
-            this.router.navigate(['/']);
-          }
-
           resolve(true);
         }, () => {
-          this.authService.logout()
+          this.authService.logout();
           resolve(false);
         }
       );

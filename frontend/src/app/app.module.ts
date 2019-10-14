@@ -22,7 +22,6 @@ import { StorageService } from 'src/app/storage.service';
 import { CompanyService } from 'src/app/views/company/company.service';
 import { DeckService } from 'src/app/services/deck.service';
 
-
 // TODO import { intersectionObserverPreset, LazyLoadImageModule } from 'ng-lazyload-image'; // <-- include intersectionObserverPreset
 import { AppComponent } from './app.component';
 import { NotfoundComponent } from './views/notfound/notfound.component';
@@ -34,21 +33,22 @@ import { ReservationCardComponent } from './views/company/company-reservations/r
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AdvertisingItemsComponent } from './views/homepage/advertisingItems/advertisingItems.component';
-import {CarouselModule} from 'ngx-owl-carousel-o';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {VenueImageComponent} from './views/company/company-reservations/venue-image/venue-image.component';
-import {CanvasComponent} from './views/company/company-reservations/venue-image/canvas/canvas.component';
-import {SortStandsPipe} from './views/company/company-reservations/sort-stands.pipe';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VenueImageComponent } from './views/company/company-reservations/venue-image/venue-image.component';
+import { CanvasComponent } from './views/company/company-reservations/venue-image/canvas/canvas.component';
+import { SortStandsPipe } from './views/company/company-reservations/sort-stands.pipe';
+import { ParticipationFormComponent } from './views/homepage/participationForm/participationForm.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 library.add(fas);
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotfoundComponent,
     HomepageComponent,
     AdvertisingItemsComponent,
+    ParticipationFormComponent,
+    NotfoundComponent,
     CompanyComponent,
     WelcomeComponent,
     CompanyReservationsComponent,
@@ -68,6 +68,7 @@ library.add(fas);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     AppRoutes,
     /* TODO    LazyLoadImageModule.forRoot({
           preset: intersectionObserverPreset
@@ -80,18 +81,12 @@ library.add(fas);
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),
-    CarouselModule
+    })
   ],
-  providers: [
-    StorageService,
-    CompanyGuard,
-    DeckService,
-    CompanyService,
-  ],
+  providers: [StorageService, CompanyGuard, DeckService, CompanyService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

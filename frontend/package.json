@@ -26,13 +26,13 @@
     "@ng-bootstrap/ng-bootstrap": "^3.2.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "bootstrap": "^4.3.1",
+    "angular-font-awesome": "^3.1.2",
     "core-js": "^2.5.4",
+    "font-awesome": "^4.7.0",
     "magnific-popup": "^1.1.0",
     "modernizr": "^3.7.1",
     "ng-lazyload-image": "^4.2.0",
     "ngx-clipboard": "^11.1.7",
-    "ngx-owl-carousel-o": "^2.0.1",
     "rxjs": "^6.3.3",
     "zone.js": "~0.8.26"
   },
@@ -45,6 +45,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "eslint": "^6.5.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^3.1.4",
@@ -54,7 +55,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
+    "tslint": "^5.20.0",
     "typescript": "~2.8.4"
   }
 }

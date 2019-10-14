@@ -9,10 +9,12 @@ import { WelcomeComponent } from 'src/app/views/company/welcome/welcome.componen
 import { CompanyReservationsComponent } from 'src/app/views/company/company-reservations/company-reservations.component';
 import {HomepageComponent} from './views/homepage/homepage.component';
 import {AdvertisingItemsComponent} from './views/homepage/advertisingItems/advertisingItems.component';
+import { ParticipationFormComponent } from './views/homepage/participationForm/participationForm.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'advertisingItems', component: AdvertisingItemsComponent },
+  { path: 'advertising-items', component: AdvertisingItemsComponent },
+  // { path: 'participation-form', component: ParticipationFormComponent },
   {
     path: 'company',
     component: CompanyComponent,
@@ -31,10 +33,7 @@ const appRoutes: Routes = [
       }
     ]
   },
-  {
-    path: '**',
-    component: NotfoundComponent
-  }
+  { path: '**', component: NotfoundComponent }
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(appRoutes);

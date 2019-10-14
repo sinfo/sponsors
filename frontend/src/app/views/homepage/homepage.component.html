@@ -1,58 +1,51 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="author" content="José Cândido">
-  <meta name="description" content="SINFO Sponsors Site">
-  <meta name="keywords" content="SINFO">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title -->
-  <title>SINFO 27 - Sponsors' Program</title>
-  <!-- Place favicon.ico in the root directory -->
-  <link rel="apple-touch-icon" href="../../../assets/homepage/images/sinfo-icon.png">
-  <link rel="shortcut icon" type="../../../assets/homepage/image/ico" href="../../../assets/homepage/images/favicon.ico" />
-  <!-- Plugin-CSS -->
-
-
-
-</head>
-
-<body data-spy="scroll" data-target="#primary-menu">
-  <!--Mainmenu-area-->
-  <div class="mainmenu-area affix" data-spy="affix" data-offset-top="100">
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <!--Logo-->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="#" class="navbar-brand logo">
-          <img src="../../../assets/homepage/images/logoSinfo.png" alt="">
-        </a>
-      </div>
-      <!--Logo/-->
-      <nav class="collapse navbar-collapse" id="primary-menu">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="#home-page">Home</a></li>
-          <li><a href="#service-page">Why?</a></li>
-          <li><a href="#price-page">Sponsorship Packages</a></li>
-          <li><a href="#feature-page">Perks</a></li>
-          <li><a href="#deadline">Deadlines</a></li>
-          <li><a href="#faq-page">FAQ</a></li>
-          <li><a href="#contact-page">Contact</a></li>
+      <a class="navbar-brand logo" href="#">
+        <img src="../../../assets/homepage/images/logoSinfo.png" alt="">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+            <a class="nav-link" href="#home-page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service-page">Why?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#price-page">Sponsorship Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#feature-page">Perks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#deadline">Deadlines</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq-page">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-page">Contact</a>
+          </li>
+<!--          <li class="nav-item">
+            <a class="nav-link flash-button" href="participation-form">Make reservation</a>
+          </li>-->
         </ul>
-      </nav>
+      </div>
     </div>
-  </div>
-  <!--Mainmenu-area/-->
+  </nav>
 
   <!--Header-area-->
   <header class="header-area overlay full-height relative v-center" id="home-page">
     <div class="absolute anlge-bg"></div>
     <div class="container lanpage">
       <div class="row v-center">
-        <div class="col-xs-12 col-md-7 header-text">
+        <div class="col-xs-12 col-md-12 header-text">
           <h2>Become a sponsor!</h2>
           <br>
           <h4>SINFO 27 ∙ from 17th to 21st of February, 2020</h4>
@@ -72,25 +65,9 @@
             sponsor.</p>
 
           <a href="http://www.sinfo.org" target="_blank" class="button white">Visit sinfo.org</a>
-          <a href="https://sinfo.ams3.cdn.digitaloceanspaces.com/static/26-sinfo/SINFO%2026%20-%20Sponsors'%20Programme.pdf" target="_blank" class="button white">Read
+          <a href="https://sinfo.ams3.cdn.digitaloceanspaces.com/static/27-sinfo/Revista-SINFO-27.pdf" target="_blank" class="button white">Read
             our digital brochure</a>
 
-        </div>
-        <div class="hidden-xs hidden-sm col-md-5 text-right">
-          <owl-carousel-o [options]="customOptions" class="screen-box screen-slider">
-            <ng-template carouselSlide class="item">
-              <img src="../../../assets/homepage/images/screen-1.png" alt="">
-            </ng-template>
-            <ng-template carouselSlide class="item">
-              <img src="../../../assets/homepage/images/screen-2.png" alt="">
-            </ng-template>
-            <ng-template carouselSlide class="item">
-              <img src="../../../assets/homepage/images/screen-3.png" alt="">
-            </ng-template>
-            <ng-template carouselSlide class="item">
-              <img src="../../../assets/homepage/images/screen-4.png" alt="">
-            </ng-template>
-          </owl-carousel-o>
         </div>
       </div>
     </div>
@@ -275,7 +252,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 offset-sm-3 text-center">
           <div class="wh"><p>Last year, <u><b>sponsorship packages sold out 3 months before SINFO 26</b></u> - if you're interested, hurry up to grant your place!</p></div><br>
-          <a href="advertisingItems" target="_blank" class="button">Check Package & Advertising items
+          <a href="advertising-items" class="button">Check Package & Advertising items
             here!</a>
         </div>
       </div>
@@ -284,8 +261,6 @@
   </section>
 
   <!--TABLE-area/-->
-
-
   <div class="container" style="margin-top: 100px;">
     <div class="col-xs-12 col-sm-6 offset-sm-3 text-center">
       <div class="page-title">
@@ -294,13 +269,6 @@
       </div>
     </div>
   </div>
-
-
-  <div class="visible-xs text-center">
-    <img src="../../../assets/homepage/images/swipe.png" alt="">
-    <p><b>Swipe the table below to see all the packages</b></p>
-  </div>
-
 
     <div class="border">
       <div style="overflow-x:auto;">
@@ -441,11 +409,9 @@
     </div>
     <br><br>
     <div class="col-xs-12 col-sm-6 offset-sm-3 text-center">
-      <a href="advertisingItems" target="_blank" class="button">Check Package & Advertising items here!</a>
+      <a href="advertising-items" class="button">Check Package & Advertising items here!</a>
     </div><br><br>
     <!--TABLE-area/-->
-
-
   <!--Pricing-area/-->
 
   <!--Perks-area/-->
@@ -573,12 +539,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="col-xs-12 col-sm-10 offset-1 col-md-8 col-md-offset-2">
           <div class="panel-group" id="accordion">
             <div class="panel">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Is
-                  it possible to acquire an individual item?</a>
+                  it possible to acquire an individual item?
+                  <span class="collapse-button">+</span>
+                </a>
               </h4>
               <div id="collapse1" class="panel-collapse collapse in">
                 <p>All individual item requests should be submitted to the SINFO’s committee member
@@ -589,7 +557,9 @@
             <div class="panel">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">How can I download
-                  the app?</a>
+                  the app?
+                  <span class="collapse-button">+</span>
+                </a>
               </h4>
               <div id="collapse2" class="panel-collapse collapse">
                 <p>The web app is available on <a href="https://www.sinfo.org/">https://sinfo.org</a>.
@@ -603,7 +573,9 @@
             <div class="panel">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Is the Diamond
-                  Package exclusive for one company?</a>
+                  Package exclusive for one company?
+                  <span class="collapse-button">+</span>
+                </a>
               </h4>
               <div id="collapse3" class="panel-collapse collapse">
                 <p>Yes, the Diamond Package is for our Main Sponsor, therefore it is only possible to
@@ -616,7 +588,9 @@
             <div class="panel">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">How should I
-                  design the presentation/workshop’s name?</a>
+                  design the presentation/workshop’s name?
+                  <span class="collapse-button">+</span>
+                </a>
               </h4>
               <div id="collapse5" class="panel-collapse collapse">
                 <p>The names should <b>not exceed 30 characters</b>, and, at the same time, should be
@@ -630,7 +604,9 @@
             <div class="panel">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">In which format
-                  should I send the logo of the company?</a>
+                  should I send the logo of the company?
+                  <span class="collapse-button">+</span>
+                </a>
               </h4>
               <div id="collapse6" class="panel-collapse collapse">
                 <p>The logo should be sent in vectorial format (.ai, .svg, .eps, .pdf, etc.). If none
@@ -649,9 +625,6 @@
   </section>
   <!--FAQ-area/-->
 
-
-
-
   <!--Contact-area/-->
   <footer class="footer-area relative sky-bg" id="contact-page">
     <div class="absolute footer-bg"></div>
@@ -667,17 +640,20 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-4">
-            <address class="side-icon-boxes">
-              <div class="side-icon-box">
+        <div class="contacts-wrapper">
+          <div class="contacts-address">
+              <div class="side-icon-box center-block">
                 <div class="side-icon">
                   <img src="../../../assets/homepage/images/location-arrow.png" alt="">
                 </div>
-                <p><strong>Address: </strong> Av. Rovisco Pais, Nº1, IST, <br /> Pav. Informática I,
-                  DEI, SINFO </p>
+                <p>
+                  <strong>Address: </strong> Av. Rovisco Pais, Nº1, IST, <br /> Pav. Informática I,
+                  DEI, SINFO
+                </p>
               </div>
-              <div class="side-icon-box">
+          </div>
+          <div class="contacts-address">
+              <div class="side-icon-box center-block">
                 <div class="side-icon">
                   <img src="../../../assets/homepage/images/mail-arrow.png" alt="">
                 </div>
@@ -685,50 +661,28 @@
                   <a href="mailto:geral@sinfo.org">geral@sinfo.org</a> <br />
                 </p>
               </div>
-            </address>
+            </div>
           </div>
-          <div class="col-xs-12 col-md-8">
-            <form action="" id="contact-form" method="post" class="contact-form">
-              <div class="form-double">
-                <input type="text" id="form-name" name="form-name" placeholder="Your name" class="form-control"
-                  required="required">
-                <input type="email" id="form-email" name="form-email" class="form-control" placeholder="E-mail address"
-                  required="required">
-              </div>
-              <input type="text" id="form-subject" name="form-subject" class="form-control" placeholder="Message topic">
-              <textarea id="form-message" name="form-message" rows="5" class="form-control"
-                placeholder="Your message" required="required"></textarea>
-              <div id="recaptcha" class="recaptcha"></div>
-              <button type="submit" class="button">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-middle">
-      <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-6 pull-right">
-            <ul class="social-menu text-right x-left">
-              <li><a href="https://www.facebook.com/sinfoist/" target="_blank"><i class="ti-facebook"></i></a></li>
-              <li><a href="https://www.instagram.com/sinfoist" target="_blank"><i class="ti-instagram"></i></a></li>
-              <li><a href="https://twitter.com/sinfoist" target="_blank"><i class="ti-twitter"></i></a></li>
-              <li><a href="https://www.youtube.com/user/sinfoist" target="_blank"><i class="ti-youtube"></i></a></li>
-              <li><a href="https://pt.linkedin.com/company/sinfoist" target="_blank"><i class="ti-linkedin"></i></a></li>
-              <li><a href="https://github.com/sinfo" target="_blank"><i class="ti-github"></i></a></li>
+          <div class="col-xs-12 col-sm-6 offset-sm-3 text-center">
+            <ul class="social-menu">
+              <li><a href="https://www.facebook.com/sinfoist/" target="_blank"><fa name="facebook" size="lg"></fa></a></li>
+              <li><a href="https://www.instagram.com/sinfoist" target="_blank"><fa name="instagram" size="lg"></fa></a></li>
+              <li><a href="https://twitter.com/sinfoist" target="_blank"><fa name="twitter" size="lg"></fa></a></li>
+              <li><a href="https://www.youtube.com/user/sinfoist" target="_blank"><fa name="youtube" size="lg"></fa></a></li>
+              <li><a href="https://pt.linkedin.com/company/sinfoist" target="_blank"><fa name="linkedin" size="lg"></fa></a></li>
+              <li><a href="https://github.com/sinfo" target="_blank"><fa name="github" size="lg"></fa></a></li>
             </ul>
           </div>
-          <div class="col-xs-12 col-sm-6">
+        </div>
+        <div class="row">
+          <div class="col align-self-center text-center">
             <img src="../../../assets/homepage/images/istLogo.png" alt="">
           </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
         <div class="row">
-          <div class="col-xs-12 text-center">
-            <p>Made with <i class="ti-heart" aria-hidden="true"></i> at SINFO</p>
+          <div class="col align-self-center text-center">
+            <p>Made with <fa name="heart" size="lg"></fa> at SINFO</p>
           </div>
         </div>
       </div>
@@ -737,18 +691,4 @@
   <!--Contact-area/-->
 
 
-  <!--Recaptcha-->
-<!--  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-    async defer>
-  </script>
-  <script type="text/javascript">
-    var widgetId;
-    var onloadCallback = function() {
-    widgetId = grecaptcha.render(document.getElementById('recaptcha'), {
-      // TODO change me
-      'sitekey' : '6LfrrXgUAAAAAIfnFHuZ2LJbrJR79cPhmmRlby-D'
-    });
-    };
-  </script>-->
-
-</body>
+</div>

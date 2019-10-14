@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   sponsors: 'http://localhost:8888',
   deck: 'http://localhost:8080',
-  frontend: 'http://localhost:4200'
+  frontend: 'http://localhost:4201'
 };
 
 /*

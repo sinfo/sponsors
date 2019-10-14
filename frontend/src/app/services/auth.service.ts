@@ -38,12 +38,9 @@ export class AuthService {
   }
 
   getHeaders(): HttpHeaders {
-    const token = this.storage.getItem('token');
-
-    return token
-      ? new HttpHeaders({
-        'Authorization': `${token}`,
+    return new HttpHeaders({
+        'Authorization': `${this.storage.getItem('token')}`,
         'Content-Type': 'application/json'
-      }) : null;
+      });
   }
 }

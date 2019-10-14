@@ -14,6 +14,7 @@ services:
   sponsors-backend:
     build: ./backend/
     container_name: sponsors-backend
+    image: orgsinfo/sponsors-backend:latest
     depends_on:
         - sponsors-database
     links:
@@ -29,6 +30,7 @@ services:
   sponsors-frontend:
       build: ./frontend/
       container_name: sponsors-frontend
+      image: orgsinfo/sponsors-frontend:latest
       depends_on:
         - sponsors-backend
       links:
