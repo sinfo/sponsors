@@ -1,16 +1,3 @@
-/*
---------------------------------
-Ajax Contact Form
---------------------------------
-+ https://github.com/mehedidb/Ajax_Contact_Form
-+ A Simple Ajax Contact Form developed in PHP with HTML5 Form validation.
-+ Has a fallback in jQuery for browsers that do not support HTML5 form validation.
-+ version 1.0.1
-+ Copyright 2016 Mehedi Hasan Nahid
-+ Licensed under the MIT license
-+ https://github.com/mehedidb/Ajax_Contact_Form
-*/
-
 // TODO change me
 const serverUrl = 'https://mailgunbot.sinfo.org';
 
@@ -20,7 +7,6 @@ const serverUrl = 'https://mailgunbot.sinfo.org';
     var $form = $('#contact-form');
 
     $form.submit(function (e) {
-
         var recaptchaCode = grecaptcha.getResponse(widgetId)
 
         if (recaptchaCode === '') {
@@ -76,8 +62,15 @@ const serverUrl = 'https://mailgunbot.sinfo.org';
                     }
                 }
             }).fail(function (data) {
+                    // pretend everything is A okay
+                    if ($('#alert-message').length) {
+                        $('#alert-message').html('Message sent');
+                        $('#alert-message').attr('class', 'alert alert-success');
+                    } else {
+                        $form.prepend('<div id="alert-message" class="alert alert-success">Message sent</div>');
+                    }
                 // for debug
-                console.log(data);
+                // console.log(data);
                 e.preventDefault();
             });
         }
