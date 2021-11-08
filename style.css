@@ -230,6 +230,10 @@ input:-webkit-autofill:focus {
 *Box-style
 **/
 
+.package-card {
+  padding: 0.5%;
+}
+
 .whitebox {
   background: #ffffff;
 }
