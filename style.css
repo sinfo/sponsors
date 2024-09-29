@@ -394,7 +394,7 @@ input:-webkit-autofill:focus {
 
 .client-area,
 .header-area {
-  background: #000000 url("images/sinfoTent.jpg") no-repeat scroll center center /
+  background: #000000 url("images/sponsorsBackground.jpg") no-repeat scroll center center /
     cover;
 }
 
@@ -1031,14 +1031,14 @@ preloader
 Animated Arrow Home Page
 -----------------------*/
 .arrow {
-  /* position: relative;
-    transform: translateY(-200px); */
+  position: relative;
+  transform: translateY(-100px);
 }
 
 .chevron {
   position: absolute;
-  width: 28px;
-  height: 8px;
+  width: 32px;
+  height: 10px;
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: move 3s ease-out infinite;
