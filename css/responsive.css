@@ -91,6 +91,9 @@
     .mainmenu-area .logo {
         margin-left: 15px;
     }
+    .side-icon-boxes {
+        flex-direction: column;
+    }
 }
 
 

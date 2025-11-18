@@ -832,8 +832,15 @@ input:-webkit-autofill:focus {
   margin-bottom: 150px;
 }
 
+.side-icon-boxes {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .side-icon-box {
-  margin-bottom: 30px;
   position: relative;
   padding-left: 80px;
 }
