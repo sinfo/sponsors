@@ -1202,12 +1202,36 @@ Safari problem fixe in home page
   z-index: 10;
 }
 
+.only_n_left {
+  top: 2em;
+  left: -4em;
+  color: #fff !important;
+  display: block;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  background-color: #a00;
+  padding: 0.5em 5em 0.4em 5em;
+  text-shadow: 0 0 0.75em #444;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  font: bold 16px/1.2em Arial, Sans-Serif;
+  -webkit-text-shadow: 0 0 0.75em #444;
+  -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  -webkit-transform: rotate(-45deg) scale(0.75, 1);
+  z-index: 10;
+}
+
 .sold-out-box {
   opacity: 0.7 !important;
 }
 
 .last-opportunity-box {
 }
+
+.only-n-left-box {
+}
+
 
 td.table-sold-out {
   background-color: #2460a396;
