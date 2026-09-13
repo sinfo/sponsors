@@ -57,7 +57,7 @@
         background-color: #ffffff;
     }
     .mainmenu-area #primary-menu {
-        background-color: #153355;
+        background-color: var(--brand-blue);
     }
     .mainmenu-area #primary-menu ul {
         overflow-y: auto;
