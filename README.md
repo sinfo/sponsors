@@ -1,1 +1,0 @@
-# SINFO sponsors' site
