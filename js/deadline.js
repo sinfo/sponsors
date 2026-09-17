@@ -7,5 +7,4 @@
         : '';
 
     document.getElementById('materials-deadline').textContent = deadline || 'To be announced';
-    document.getElementById('deadline-late-warning').hidden = !deadline;
 })();
