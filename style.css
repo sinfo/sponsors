@@ -1182,8 +1182,8 @@ Safari problem fixe in home page
 }
 
 
-/* new rule to deactivate/activate sold-out:display:
- * it only appears if the main div has 'soul-out-box class */
+
+ /*Only appears if main div has 'soul-out-box' class */
  
 .sold-out-box .sold_out {
   display: block;       
