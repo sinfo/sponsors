@@ -1165,7 +1165,7 @@ Safari problem fixe in home page
   top: 2em;
   left: -4em;
   color: #fff !important;
-  display: block;
+  display: none; /* previously "block" */
   position: absolute;
   text-align: center;
   text-decoration: none;
@@ -1179,6 +1179,14 @@ Safari problem fixe in home page
   -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
   -webkit-transform: rotate(-45deg) scale(0.75, 1);
   z-index: 10;
+}
+
+
+/* new rule to deactivate/activate sold-out:display:
+ * it only appears if the main div has 'soul-out-box class */
+ 
+.sold-out-box .sold_out {
+  display: block;       
 }
 
 .last_opportunity {
