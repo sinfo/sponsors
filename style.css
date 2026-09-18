@@ -1,21 +1,14 @@
-/*-----------------
-1. Google font
-------------------*/
-
+/* Google font */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 
-/*------------------------------
- * Brand Color Variable
- * Change ONE value here to
- * re-theme the entire site.
- *------------------------------*/
 
 :root {
+  /* SINFO branding blue color in the whole website */
   --brand-blue: #000032;
 }
 
 /*-------------------
-2. Theme Default CSS
+Theme Default CSS
 --------------------*/
 
 a {
