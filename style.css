@@ -1152,20 +1152,20 @@ Safari problem fixe in home page
   display: none !important;
 }
 
-.sould_out_wrapper {
+.sold-out-wrapper {
   width: 500px;
   height: 300px;
   position: relative;
   overflow: hidden;
 }
-.sould_out_wrapper img {
+.sold-out-wrapper img {
   width: 100%;
 }
-.sold_out {
+.sold-out {
   top: 2em;
   left: -4em;
   color: #fff !important;
-  display: none; /* previously "block" */
+  display: none; /* invisible as default */
   position: absolute;
   text-align: center;
   text-decoration: none;
@@ -1183,9 +1183,8 @@ Safari problem fixe in home page
 
 
 
- /*Only appears if main div has 'soul-out-box' class */
- 
-.sold-out-box .sold_out {
+ /* display: block makes the element visible when sold-out-box is parent of .sold-out */
+.sold-out-box .sold-out {
   display: block;       
 }
 
