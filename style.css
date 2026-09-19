@@ -1137,20 +1137,20 @@ Safari problem fixe in home page
   display: none !important;
 }
 
-.sould_out_wrapper {
+.sold-out-wrapper {
   width: 500px;
   height: 300px;
   position: relative;
   overflow: hidden;
 }
-.sould_out_wrapper img {
+.sold-out-wrapper img {
   width: 100%;
 }
-.sold_out {
+.sold-out {
   top: 2em;
   left: -4em;
   color: #fff !important;
-  display: block;
+  display: none; /* invisible as default */
   position: absolute;
   text-align: center;
   text-decoration: none;
@@ -1164,6 +1164,13 @@ Safari problem fixe in home page
   -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
   -webkit-transform: rotate(-45deg) scale(0.75, 1);
   z-index: 10;
+}
+
+
+
+ /* display: block makes the element visible when sold-out-box is parent of .sold-out */
+.sold-out-box .sold-out {
+  display: block;       
 }
 
 .last_opportunity {
